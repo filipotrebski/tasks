@@ -13,6 +13,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
 
 group = 'com.crud'
@@ -32,6 +33,5 @@ dependencies {
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-
-
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
