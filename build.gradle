@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.18.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.18.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -21,21 +21,27 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-    
-    
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.projectlombok:lombok')
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	//Local config
-//	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
-	//Heroku config
-	compile('org.postgresql:postgresql')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	//providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+
+
+    // Swagger
+    compile('io.springfox:springfox-swagger2:2.7.0')
+    compile('io.springfox:springfox-swagger-ui:2.7.0')
+    //Local config
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+    //Heroku config
+//    compile('org.postgresql:postgresql')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
