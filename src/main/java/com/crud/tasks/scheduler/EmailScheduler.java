@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
 public class EmailScheduler {
 
@@ -32,7 +30,7 @@ public class EmailScheduler {
                 adminConfig.getAdminMail(),
                 SUBJECT,
                 "Currently in database you got: " + size +
-                        Optional.ofNullable(size).filter(s -> size == 1).map(s -> " task").orElse(" tasks")
+                        (size == 7 ? " task" : " tasks")
         ));
     }
 }
