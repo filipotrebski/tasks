@@ -8,6 +8,6 @@ import lombok.Getter;
 public class TrelloCard {
     private String name;
     private String description;
-    private String pod;
+    private String pos;
     private String listId;
 }
