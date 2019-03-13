@@ -73,7 +73,7 @@ public class TaskControllerTest {
 
         when(taskController.getTask(1L)).thenReturn(null);
         //When & Then
-        mockMvc.perform(get("/v1/task/getTask?id=1")
+        mockMvc.perform(get("/v1/task/getTask?taskId=1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200));
     }
@@ -83,9 +83,9 @@ public class TaskControllerTest {
         //Given
         TaskDto task = new TaskDto(1L, "Test Task", "Test Desc");
 
-        when(taskController.getTask(1l)).thenReturn(task);
+        when(taskController.getTask(1L)).thenReturn(task);
         //When & Then
-        mockMvc.perform(get("/v1/task/getTask?id={id}", 1)
+        mockMvc.perform(get("/v1/task/getTask?taskId={id}", 1)
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8"))
                 .andExpect(status().isOk())
@@ -135,11 +135,11 @@ public class TaskControllerTest {
         String jsonContent = gson.toJson(taskDto);
 
         //When & Then
-        mockMvc.perform(delete("/v1/task/deleteTask?id={id}",1)
+        mockMvc.perform(delete("/v1/task/deleteTask?taskId={id}",1)
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
-                .andExpect(status().isOk());
+                .andExpect(status().is(200));
     }
 
 }
