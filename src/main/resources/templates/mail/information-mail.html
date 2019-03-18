@@ -8,7 +8,7 @@
 
         @media only screen and (max-width: 620px) {
             table[class=body] h1 {
-                font-size: 28px !important;
+                font-size: 30px !important;
                 margin-bottom: 10px !important;
             }
 
@@ -106,23 +106,23 @@
                       style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Topic<span
                         th:text="${preview_message}"></span></span>
                 <table class="main"
-                       style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                       style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #00ffff; border-radius: 3px;">
 
                     <!-- START MAIN CONTENT AREA -->
                     <tr>
                         <td class="wrapper"
-                            style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;">
+                            style="font-family: sans-serif; font-size: 25px; vertical-align: top; box-sizing: border-box; padding: 20px;">
                             <table border="0" cellpadding="0" cellspacing="0"
                                    style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                                 <tr>
-                                    <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
+                                    <td style="font-family: sans-serif; font-size: 20px; vertical-align: top;">
                                         <p th:if="${is_friend}"
-                                           style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
+                                           style="font-family: sans-serif; font-size: 20px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
                                             Yo <span th:text="${admin_config.getAdminName()}"></span></p>
                                         <p th:unless="${is_friend}"
-                                           style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
+                                           style="font-family: sans-serif; font-size: 20px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
                                             Dear <span th:text="${admin_config.getAdminName()}"></span></p>
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"
+                                        <p style="font-family: sans-serif; font-size: 20px; font-weight: normal; margin: 0; Margin-bottom: 15px;"
                                            th:text="${message}"></p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
                                                style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
@@ -135,10 +135,10 @@
                                                            style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
                                                         <tbody>
                                                         <tr>
-                                                            <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #3498db; border-radius: 5px; text-align: center;">
+                                                            <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #000000; border-radius: 5px; text-align: center;">
                                                                 <a th:href="${task_url}" th:text="${button}"
                                                                    target="_blank"
-                                                                   style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">BUTTON_NAME</a>
+                                                                   style="display: inline-block; color: #ffffff; background-color: #000000; border: solid 5px #ff0000; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 24px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #ff0000;">BUTTON_NAME</a>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -147,12 +147,6 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
-                                            Application functionality:
-                                        </p>
-                                        <ul th:each="function : ${application_functionality}">
-                                            <li th:text="${function}"></li>
-                                        </ul>
                                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"
                                            th:text="${goodbye_message}"></p>
                                     </td>
